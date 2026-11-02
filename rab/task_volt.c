@@ -11,7 +11,7 @@
 
 extern unsigned char voltage;
 
-unsigned char countError = 0; //счетчик низкого напряжения
+unsigned char countError = 0; //СЃС‡РµС‚С‡РёРє РЅРёР·РєРѕРіРѕ РЅР°РїСЂСЏР¶РµРЅРёСЏ
 
 char error = 0;
 
@@ -20,7 +20,7 @@ void offPictureVoltage(void)
 	lowVoltagePictureOff();
 }
 
-//отображение напряжения
+//РѕС‚РѕР±СЂР°Р¶РµРЅРёРµ РЅР°РїСЂСЏР¶РµРЅРёСЏ
 void Volt(void)
 {
 	unsigned int res1, res2, res3;
@@ -38,13 +38,13 @@ void Volt(void)
 	PrintVolt(30, 283, res);
 	voltage = res1;
 
-	if(ignitionOn()) //если зажигание вкл
+	if(ignitionOn()) //РµСЃР»Рё Р·Р°Р¶РёРіР°РЅРёРµ РІРєР»
 	{
-		if(voltage < 124) //сильная просадка при работающем двигателе
+		if(voltage < 124) //СЃРёР»СЊРЅР°СЏ РїСЂРѕСЃР°РґРєР° РїСЂРё СЂР°Р±РѕС‚Р°СЋС‰РµРј РґРІРёРіР°С‚РµР»Рµ
 		{
 			lowVoltagePictureOn();			
 		}
-		if(voltage < 128) //длительная просадка
+		if(voltage < 128) //РґР»РёС‚РµР»СЊРЅР°СЏ РїСЂРѕСЃР°РґРєР°
 		{
 			countError++;
 			if(countError >= 3)
@@ -64,7 +64,7 @@ void Volt(void)
 	}
 	else
 	{
-		if(voltage < 119) //длительная просадка
+		if(voltage < 119) //РґР»РёС‚РµР»СЊРЅР°СЏ РїСЂРѕСЃР°РґРєР°
 		{
 			countError++;
 			if(countError >= 6)

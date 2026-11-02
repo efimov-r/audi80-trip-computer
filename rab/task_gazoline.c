@@ -10,17 +10,17 @@
 #include "tempure_sensor.h"
 
 unsigned char gazolineMass[50];
-unsigned char pointer=0; //0 - начальное, 1-51 диапазон
-unsigned char consider=0; //учитывать показания
+unsigned char pointer=0; //0 - РЅР°С‡Р°Р»СЊРЅРѕРµ, 1-51 РґРёР°РїР°Р·РѕРЅ
+unsigned char consider=0; //СѓС‡РёС‚С‹РІР°С‚СЊ РїРѕРєР°Р·Р°РЅРёСЏ
 
 void TaskGazoline(void)
 {
 	unsigned char benz; 
-	if(PIND&0b00010000) //включено зажигание
+	if(PIND&0b00010000) //РІРєР»СЋС‡РµРЅРѕ Р·Р°Р¶РёРіР°РЅРёРµ
 	{
 		benz = ADC_b(5) * 0.758;
 
-		if(pointer == 0) //вначале весь массив как первое показание
+		if(pointer == 0) //РІРЅР°С‡Р°Р»Рµ РІРµСЃСЊ РјР°СЃСЃРёРІ РєР°Рє РїРµСЂРІРѕРµ РїРѕРєР°Р·Р°РЅРёРµ
 		{
 			for(int i =0; i<50; i++)
 			{
@@ -28,7 +28,7 @@ void TaskGazoline(void)
 				pointer++;
 			}
 		}
-		if(pointer > 48)  //на первом проходе начанаем учитывать
+		if(pointer > 48)  //РЅР° РїРµСЂРІРѕРј РїСЂРѕС…РѕРґРµ РЅР°С‡Р°РЅР°РµРј СѓС‡РёС‚С‹РІР°С‚СЊ
 		{
 			consider=1;
 		}		

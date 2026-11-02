@@ -682,7 +682,7 @@ void drawchar_27(int x, int y, unsigned char c,uint16_t colour)
 
 PrintOil(int x, int y, int tempOil)
 {
-	//переменные температуры масла, три цифры. Первая цифра 0 не выводится, 1 как 1, 2 знак -, 3 все прочерки, 4 знак <
+	//РїРµСЂРµРјРµРЅРЅС‹Рµ С‚РµРјРїРµСЂР°С‚СѓСЂС‹ РјР°СЃР»Р°, С‚СЂРё С†РёС„СЂС‹. РџРµСЂРІР°СЏ С†РёС„СЂР° 0 РЅРµ РІС‹РІРѕРґРёС‚СЃСЏ, 1 РєР°Рє 1, 2 Р·РЅР°Рє -, 3 РІСЃРµ РїСЂРѕС‡РµСЂРєРё, 4 Р·РЅР°Рє <
 	unsigned char tm_a, tm_b, tm_c, vrem;
 	if(tempOil<40) 
 	{
@@ -750,10 +750,10 @@ PrintOil(int x, int y, int tempOil)
 		
 }
 
-//если <10, то выводятся прочерки 
+//РµСЃР»Рё <10, С‚Рѕ РІС‹РІРѕРґСЏС‚СЃСЏ РїСЂРѕС‡РµСЂРєРё 
 PrintVolt(int x, int y, unsigned char voltage)
 {
-	//перменные напряжения, две цифры до запятой и одна после. Если цифры до запятой 0 и 0, то выводятся прочерки
+	//РїРµСЂРјРµРЅРЅС‹Рµ РЅР°РїСЂСЏР¶РµРЅРёСЏ, РґРІРµ С†РёС„СЂС‹ РґРѕ Р·Р°РїСЏС‚РѕР№ Рё РѕРґРЅР° РїРѕСЃР»Рµ. Р•СЃР»Рё С†РёС„СЂС‹ РґРѕ Р·Р°РїСЏС‚РѕР№ 0 Рё 0, С‚Рѕ РІС‹РІРѕРґСЏС‚СЃСЏ РїСЂРѕС‡РµСЂРєРё
 	unsigned char v_a=0, v_b=0, v_c=3;
 	v_a=voltage/100;
 	v_b=(voltage%100)/10;
@@ -849,31 +849,31 @@ void drawchar_21(int x, int y, unsigned char c,uint16_t colour)
 
 PrintAkk(int x, int y)
 {
-	//корпус
+	//РєРѕСЂРїСѓСЃ
 	ili9341_fillrect(x, y + 2, 28, 2, PINK);
 	ili9341_fillrect(x, y+17, 28, 2, PINK);
 	ili9341_fillrect(x, y + 4, 2, 13, PINK);
 	ili9341_fillrect(x + 26, y + 4, 2, 13, PINK);
-	//клеммы
+	//РєР»РµРјРјС‹
 	ili9341_fillrect(x+4, y, 4, 2, PINK);
 	ili9341_fillrect(x+20, y, 4, 2, PINK);
-	//минус
+	//РјРёРЅСѓСЃ
 	ili9341_fillrect(x+3, y+7, 6, 2, PINK);
-	//плюс
+	//РїР»СЋСЃ
 	ili9341_fillrect(x+19, y+7, 6, 2, PINK);
 	ili9341_fillrect(x+21, y+5, 2, 6, PINK);
 }
 
 PrintMasl(int x, int y)
 {
-	//ручка
+	//СЂСѓС‡РєР°
 	ili9341_fillrect(x + 1, y, 3, 2, PINK);
 	ili9341_fillrect(x, y + 2, 2, 3, PINK);
 	ili9341_fillrect(x + 2, y + 4, 2, 2, PINK);
 	ili9341_drawpixel(x + 4,y + 1,PINK);
 	ili9341_drawpixel(x + 4,y + 2,PINK);
 	ili9341_drawpixel(x + 5,y + 2,PINK);
-	//корпус
+	//РєРѕСЂРїСѓСЃ
 	ili9341_fillrect(x + 5, y+3, 9, 2, PINK);
 	ili9341_fillrect(x + 4, y+4, 2, 8, PINK);
 	ili9341_fillrect(x + 6, y+10, 11, 2, PINK);
@@ -902,10 +902,10 @@ PrintMasl(int x, int y)
 	ili9341_fillrect(x + 14, y+4, 1, 2, PINK);
 	ili9341_fillrect(x + 15, y+5, 3, 2, PINK);
 	ili9341_fillrect(x + 18, y+4, 4, 2, PINK);
-	//крышка
+	//РєСЂС‹С€РєР°
 	ili9341_fillrect(x + 8, y, 5, 2, PINK);
 	ili9341_drawpixel(x + 10,y + 2,PINK);
-	//жижа
+	//Р¶РёР¶Р°
 	ili9341_drawpixel(x + 26,y + 7,PINK);
 	ili9341_drawpixel(x + 26,y + 8,PINK);
 	ili9341_drawpixel(x + 25,y + 8,PINK);

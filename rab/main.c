@@ -9,17 +9,17 @@
 
 #define F_CPU 8000000UL
 
-#define offMode          0 //выкл
-#define onMode          1 //вкл
-#define connectNew       2 //подана команда на коннект
-#define connect1True     3 //1 верный байт
+#define offMode          0 //РІС‹РєР»
+#define onMode          1 //РІРєР»
+#define connectNew       2 //РїРѕРґР°РЅР° РєРѕРјР°РЅРґР° РЅР° РєРѕРЅРЅРµРєС‚
+#define connect1True     3 //1 РІРµСЂРЅС‹Р№ Р±Р°Р№С‚
 #define connect2True     4
-#define connectTrue      5 //все байты верны, есть коннект
+#define connectTrue      5 //РІСЃРµ Р±Р°Р№С‚С‹ РІРµСЂРЅС‹, РµСЃС‚СЊ РєРѕРЅРЅРµРєС‚
 #define input1True       6
 #define input2True       7
 #define input3True       8
 #define inputTrue        9
-#define inputBute        10 //пошли даные, номер бита + это
+#define inputBute        10 //РїРѕС€Р»Рё РґР°РЅС‹Рµ, РЅРѕРјРµСЂ Р±РёС‚Р° + СЌС‚Рѕ
 
 /// Main //////////////
 int main(void)
@@ -43,7 +43,7 @@ int main(void)
 	UCSRB=0b10011000;
 	UCSRC=0b10000110;
 
-	if(PINA&0b00001000) //ненажата
+	if(PINA&0b00001000) //РЅРµРЅР°Р¶Р°С‚Р°
 	{
 		mode = onMode;		
 	}
@@ -69,9 +69,9 @@ int main(void)
    }            
 }
 
-unsigned char data3; //для двухбайтовых данных
+unsigned char data3; //РґР»СЏ РґРІСѓС…Р±Р°Р№С‚РѕРІС‹С… РґР°РЅРЅС‹С…
 signed char data4=0;
-float dataFloat; //вычисления
+float dataFloat; //РІС‹С‡РёСЃР»РµРЅРёСЏ
 
 ISR (USART_RXC_vect)
 {
@@ -108,7 +108,7 @@ ISR (USART_RXC_vect)
 			{
 				dataFloat = data2 + 128;
 				dataFloat *= 14.7;
-				dataFloat /= 256; //истина 14.7
+				dataFloat /= 256; //РёСЃС‚РёРЅР° 14.7
 				fuelAir = dataFloat*10;
 			}
 			if(numByte == 13)
@@ -127,7 +127,7 @@ ISR (USART_RXC_vect)
 			{
 				dataFloat = data2;
 				dataFloat += 128;
-				dataFloat /= 256; //истина 
+				dataFloat /= 256; //РёСЃС‚РёРЅР° 
 				injectionTimeCorrection = dataFloat*100;
 			}
 			if(numByte == 19)
@@ -142,7 +142,7 @@ ISR (USART_RXC_vect)
 				if(0 != (data2 & 0b00000010)) data4 |= 0b00000010;
 				if(0 != (data2 & 0b00000001)) data4 |= 0b00000001;
 
-				data4 /=2;  //истина
+				data4 /=2;  //РёСЃС‚РёРЅР°
 
 				ignitionTiming = data4;
 			}
@@ -153,7 +153,7 @@ ISR (USART_RXC_vect)
 			if(numByte == 26)
 			{
 				dataFloat = (data2<<8) + data3;
-				dataFloat /= 125; //истина
+				dataFloat /= 125; //РёСЃС‚РёРЅР°
 				injectionPulseTime = dataFloat * 10;
 			}
 			if(numByte == 33)
@@ -163,7 +163,7 @@ ISR (USART_RXC_vect)
 			if(numByte == 34)
 			{
 				dataFloat = (data2<<8) + data3;
-				dataFloat /= 128; //истина
+				dataFloat /= 128; //РёСЃС‚РёРЅР°
 				fuelConsumption = dataFloat * 10;
 			}
 			
@@ -245,7 +245,7 @@ ISR(TIMER0_OVF_vect)
 	      }      
    }
    
-	if(PINA&0b00001000) //ненажата
+	if(PINA&0b00001000) //РЅРµРЅР°Р¶Р°С‚Р°
 	{
 		if(buttonTime>10)
 		{
@@ -260,7 +260,7 @@ ISR(TIMER0_OVF_vect)
 			buttonTime=0;			
 		}		
 	}
-	else //нажата
+	else //РЅР°Р¶Р°С‚Р°
 	{
 		buttonTime++;		
 	}

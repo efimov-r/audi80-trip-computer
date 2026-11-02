@@ -25,7 +25,7 @@
 #define ILI9341_TFTHEIGHT 240 
 #define ILI9341_TFTWIDTH 320
 
-//âûñîòà ëèíèé ðàçäåëåíèÿ
+//Ð²Ñ‹ÑÐ¾Ñ‚Ð° Ð»Ð¸Ð½Ð¸Ð¹ Ñ€Ð°Ð·Ð´ÐµÐ»ÐµÐ½Ð¸Ñ
 #define line_a 100
 #define line_b 200
 #define line_c 270
@@ -35,11 +35,11 @@
 
     
 //#define RED         0x4000   
-//#define RED         0x3020  //ôîí 
+//#define RED         0x3020  //Ñ„Ð¾Ð½ 
 //#define RED         0x2000 
 #define RED 0x0000 
 #define YELLOW      0xFE60     
-//#define PINK        0xEA62  //òåêñò
+//#define PINK        0xEA62  //Ñ‚ÐµÐºÑÑ‚
 //#define PINK ((((232>>3)<<11) | ((76>>2)<<5) | (16>>3)))
 //#define PINK ((((218>>3)<<11) | ((31>>2)<<5) | (31>>3)))
 //#define PINK ((((243>>3)<<11) | ((5>>2)<<5) | (5>>3)))

@@ -9,17 +9,17 @@
 #include "prototype_task.h"
 #include "tempure_sensor.h"
 
-#define offMode          0 //выкл
-#define onMode          1 //вкл
-#define connectNew       2 //подана команда на коннект
-#define connect1True     3 //1 верный байт
+#define offMode          0 //РІС‹РєР»
+#define onMode          1 //РІРєР»
+#define connectNew       2 //РїРѕРґР°РЅР° РєРѕРјР°РЅРґР° РЅР° РєРѕРЅРЅРµРєС‚
+#define connect1True     3 //1 РІРµСЂРЅС‹Р№ Р±Р°Р№С‚
 #define connect2True     4
-#define connectTrue      5 //все байты верны, есть коннект
+#define connectTrue      5 //РІСЃРµ Р±Р°Р№С‚С‹ РІРµСЂРЅС‹, РµСЃС‚СЊ РєРѕРЅРЅРµРєС‚
 #define input1True       6
 #define input2True       7
 #define input3True       8
 #define inputTrue        9
-#define inputBute        10 //пошли даные, номер бита + это
+#define inputBute        10 //РїРѕС€Р»Рё РґР°РЅС‹Рµ, РЅРѕРјРµСЂ Р±РёС‚Р° + СЌС‚Рѕ
 
 void TaskLongPress(void)
 {

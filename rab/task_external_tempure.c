@@ -17,9 +17,9 @@
 unsigned char scratchpad[9];
 unsigned int tmp = 0;
 unsigned char temperature;
-unsigned char fl_d_t=0; //флаг присутствия датчика температуры
+unsigned char fl_d_t=0; //С„Р»Р°Рі РїСЂРёСЃСѓС‚СЃС‚РІРёСЏ РґР°С‚С‡РёРєР° С‚РµРјРїРµСЂР°С‚СѓСЂС‹
 
-//запрос на измерение внешней температуры
+//Р·Р°РїСЂРѕСЃ РЅР° РёР·РјРµСЂРµРЅРёРµ РІРЅРµС€РЅРµР№ С‚РµРјРїРµСЂР°С‚СѓСЂС‹
 void Temp_out_a(void)
 {
 	if(!OWI_DetectPresence(BUS))
@@ -37,7 +37,7 @@ void Temp_out_a(void)
 
 }
 
-//обработка ответа внешней температуры
+//РѕР±СЂР°Р±РѕС‚РєР° РѕС‚РІРµС‚Р° РІРЅРµС€РЅРµР№ С‚РµРјРїРµСЂР°С‚СѓСЂС‹
 void Temp_out_b(void)
 {
 	OWI_DetectPresence(BUS);
