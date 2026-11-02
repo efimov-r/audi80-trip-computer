@@ -1,0 +1,3 @@
+# Артефакты сборки AVR Studio / WinAVR
+rab/default/*
+!rab/default/Makefile
